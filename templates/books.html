@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<h1>Все книги</h1>
+<ol>
+  {% for i in query %}
+  <li>
+    <h2>{{ i.title }}</h2>
+    <p>{{ i.description }}</p>
+    <p>цена:{{ i.price }}</p>
+      <p>{{ i.created_at }}</p>
+      <p>{{ i.updated_at }}</p>
+  </li>
+  {% endfor %}
+</ol>
+</body>
+</html>

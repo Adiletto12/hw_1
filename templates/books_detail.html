@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>{{query_id.title}}</h1>
+    <img src="query_id.image.url" alt="" width="400" height="500">
+    <audio controls>
+        <source src={{query_id.music.url}} type='audio/mpeg'>
+    </audio>
+    <p>Жанр: {{query_id.type_books}}</p>
+    <p>{{query_id.full_description}}</p>
+    <p>Автор: {{query_id.autor}}</p>
+    <iframe src="{{query_id.youtube_url}}" frameborder="0" width="640" height="420"></iframe>
+    <p>Добавлена {{ query_id.created_at }}</p>
+      <p>Изменено {{ query_id.updated_at }}</p>
+</center>
+</body>
+</html>

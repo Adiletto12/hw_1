@@ -1,22 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<center>
-    <h1>{{query_id.title}}</h1>
-    <img src="query_id.image.url" alt="" width="400" height="500">
-    <audio controls>
-        <source src={{query_id.music.url}} type='audio/mpeg'>
-    </audio>
-    <p>Жанр: {{query_id.type_books}}</p>
-    <p>{{query_id.full_description}}</p>
-    <p>Автор: {{query_id.autor}}</p>
-    <iframe src="{{query_id.youtube_url}}" frameborder="0" width="640" height="420"></iframe>
-    <p>Добавлена {{ query_id.created_at }}</p>
-      <p>Изменено {{ query_id.updated_at }}</p>
-</center>
-</body>
-</html>
+{% include 'header_and_footer/header.html' %}
+<div class="portfolio-wrap">
+    <div class="portfolio-item">
+        <div class="portfolio-item-wrap">
+            <a href="">
+                <img src="{{query_id.image.url}}">
+                <div class="portfolio-item-inner">
+                    <div class="portfolio-heading">
+                        <h3>{{query_id.title}}</h3>
+                    </div>
+                    <ul>
+                        <li>{{query_id.full_description}}</li>
+                        <li>Жанр: {{query_id.type_books}}</li>
+                        <li>Автор: {{query_id.autor}}</li>
+                        <li>Добавлена: {{ query_id.created_at }}</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="audio-player">
+        <audio controls>
+            <source src="{{query_id.music.url}}" type="audio/mpeg">
+        </audio>
+        <div class="audio-controls">
+            <button onclick="document.querySelector('audio').play()">Play</button>
+            <button onclick="document.querySelector('audio').pause()">Pause</button>
+            <button onclick="document.querySelector('audio').currentTime -= 10">Rewind 10s</button>
+            <button onclick="document.querySelector('audio').currentTime += 10">Forward 10s</button>
+        </div>
+    </div>
+
+    <div class="youtube-video">
+        <iframe src="{{query_id.youtube_url}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+{% include 'header_and_footer/footer.html' %}

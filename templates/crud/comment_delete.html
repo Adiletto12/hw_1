@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Вы точно хотите удалить этот комментарий</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+    <button><a href="/comment_list/">Отмена</a></button>
+</form>
+</body>
+</html>

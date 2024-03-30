@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'book',
     'comment',
+    'parser',
+    'parser_m3',
 ]
 
 MIDDLEWARE = [

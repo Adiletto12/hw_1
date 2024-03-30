@@ -10,6 +10,8 @@ urlpatterns = [
     path('books/', BookListView.as_view()),
     path('book/<int:id>/', BookDetailView.as_view()),
     path('', include('comment.urls')),
+    path('', include('parser.urls')),
+    path('', include('parser_m3.urls')),
     path('search/', SearchView.as_view(), name='search'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for i in rezka %}
+    <li>
+        <h1>{{i.title}}</h1>
+        <img src="{{i.image}}" alt="">
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

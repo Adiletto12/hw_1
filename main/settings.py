@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'comment',
     'parser',
     'parser_m3',
+    'custom_user',
 ]
 
 MIDDLEWARE = [

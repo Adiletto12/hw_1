@@ -13,6 +13,8 @@ urlpatterns = [
     path('', include('parser.urls')),
     path('', include('parser_m3.urls')),
     path('search/', SearchView.as_view(), name='search'),
+    path('', include('custom_user.urls')),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

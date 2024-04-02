@@ -1,0 +1,10 @@
+{% include 'header_and_footer/header.html' %}
+<h1>Авторизация</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" >Авторизация</button>
+</form>
+
+<h2><a href="/register/">У меня нет Аккаунта</a></h2>
+{% include 'header_and_footer/footer.html' %}

@@ -1,0 +1,19 @@
+{% include 'header_and_footer/header.html' %}
+
+<h1>Список друзей</h1>
+<ol>
+    {% for i in person %}
+    <li>
+        <h3><strong>name - {{i.username}}</strong></h3>
+        <p>email - {{i.email}}</p>
+        <p>phone - {{phone_number}}</p>
+    </li>
+    {% endfor %}
+</ol>
+
+<form action="{% url 'person:login' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit">Выйти</button>
+</form>
+
+{% include 'header_and_footer/footer.html' %}

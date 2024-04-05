@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Все продукты</h1>
+<ul>
+  {% for i in meal %}
+  <li>
+    <h2>{{i.title}}</h2>
+    {% for tag in i.tags.all %}
+    <p>#{{tags.name}}</p>
+    {% endfor %}
+  </li>
+  {% endfor %}
+
+</ul>
+
+</body>
+</html>
+
+</body>
+</html>

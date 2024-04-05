@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from book.views import BookListView, BookDetailView, SearchView
+from book.views import BookListView, BookDetailView, SearchView, litListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,6 +14,7 @@ urlpatterns = [
     path('', include('parser_m3.urls')),
     path('search/', SearchView.as_view(), name='search'),
     path('', include('custom_user.urls')),
+    path('lit/', litListView.as_view()),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

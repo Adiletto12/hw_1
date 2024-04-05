@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from book.models import Book
 from django.views import generic
+from . import models
 
 
 class BookListView(generic.ListView):
@@ -9,7 +10,15 @@ class BookListView(generic.ListView):
     model = Book
 
     def get_queryset(self):
-        return self.model.objects.all()
+        return self.model.objects.filter().order_by('-id')
+
+class litListView(generic.ListView):
+    template_name = 'lit_list.html'
+    context_object_name = 'lit'
+    model = models.Book
+
+    def get_queryset(self):
+        return self.model.objects.filter(tags__name='#Литература').order_by('-id')
 
 
 class BookDetailView(generic.DetailView):

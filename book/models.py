@@ -1,5 +1,13 @@
 from django.db import models
 
+
+class BookTag(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Напишите тег', default='#')
+
+    def __str__(self):
+        return f'#{self.name}'
+
+
 class Book(models.Model):
 
     TYPE_BOOKS_CHOICES = (
@@ -21,12 +29,10 @@ class Book(models.Model):
     youtube_url = models.URLField(null=True, blank=True, verbose_name='Вставьте url ссылку YouTube ролика')
     full_description = models.TextField(null=True, verbose_name='Напишите полное описание книги')
     autor = models.CharField(max_length=100, null=True, verbose_name='Напишите имя автора')
-
-
-
+    tags = models.ManyToManyField(BookTag, null=True)
 
     def __str__(self):
-        return self.title
+        return f'{self.title}'
 
     class Meta:
         verbose_name = 'Книгу'
